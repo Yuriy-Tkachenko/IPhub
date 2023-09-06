@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: $basic-white;
 }
 
 img {
@@ -22,7 +23,9 @@ ul {
 
 body {
   margin: 0;
-  font-family: "GothamPro", serif;
+  font-family: "Montserrat", serif;
+  background: $dark-back;
+  color: $basic-white;
 }
 
 .visually-hidden {
