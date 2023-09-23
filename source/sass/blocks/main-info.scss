@@ -1,0 +1,199 @@
+.main-info {
+  @media(min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 300px;
+      background-image: url(../../img/snail@1x.png);
+      background-size: cover;
+      top: 75px;
+      right: 25px;
+    }
+
+    @media(min-resolution: 2dppx) {
+      &::after {
+        background-image: url(../../img/snail@2x.png);
+      }
+    }
+  }
+
+  @media(min-width: $desktop-width) {
+    &::after {
+      width: 600px;
+      height: 600px;
+    }
+  }
+}
+
+.main-info .container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media(min-width: $tablet-width) {
+    align-items: flex-start;
+    padding-top: 70px;
+  }
+
+  @media(min-width: $desktop-width) {
+    padding-top: 109px;
+  }
+}
+
+.main-info__title {
+  order: 3;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  color: $basic-grey;
+  text-align: center;
+  margin: 0 0 30px 0;
+
+  @media(min-width: $tablet-width) {
+    text-align: start;
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  @media(min-width: $desktop-width) {
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+}
+
+.main-info__caption {
+  order: 1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: $basic-grey;
+
+  @media(min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media(min-width: $desktop-width) {
+    margin-bottom: 8px;
+  }
+}
+
+.main-info__slogan {
+  order: 2;
+  font-family: STIX Two Text;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 135%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 10px;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 9px;
+    background-image: url(../../img/point-decor.svg);
+  }
+
+  &::before {
+    top: 2px;
+    left: -10px;
+  }
+
+  &::after {
+    rotate: 180deg;
+    bottom: 25px;
+    right: 10px;
+  }
+
+  @media(min-width: $tablet-width) {
+    font-size: 44px;
+    text-align: left;
+
+    &::after {
+      bottom: 45px;
+      right: 40px;
+    }
+  }
+
+  @media(min-width: $desktop-width) {
+    font-size: 55px;
+    margin-bottom: 16px;
+  }
+}
+
+.main-info__offer-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 160%;
+  color: $basic-white;
+  text-align: center;
+  padding: 24px 50px;
+  background-color: $basic-red;
+  width: 300px;
+  border-radius: 55%;
+  position: relative;
+  margin-bottom: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 90px;
+    border: 1px solid $basic-white;
+    border-radius: 55%;
+    top: 0;
+    left: 0;
+    rotate: -5deg;
+    z-index: 1;
+  }
+
+  @media(min-width: $tablet-width) {
+    font-size: 16px;
+    margin-right: 32px;
+    margin-bottom: 0;
+    padding: 24px 20px;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+.main-info__offers-link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 160%;
+  color: $basic-red;
+  padding: 10px 20px;
+  border: 1px solid $basic-red;
+  border-radius: 55%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 8px;
+    background-image: url(../../img/red-arrow.svg);
+    top: 18px;
+    right: -15px;
+  }
+}
+
+.main-info__offers-wrapper {
+  order: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+  @media(min-width: $tablet-width) {
+    flex-direction: row;
+    
+  }
+}

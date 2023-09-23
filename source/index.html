@@ -13,10 +13,10 @@
         <use href="img/icons/stack.svg#logo"></use>
       </svg>
       <a class="page-header__link" href="tel:+78888888888">
-        +7 (888) 888 88 88 
-        <span>Получить консультацию</span>
+        <span class="page-header__link-number">+7 (888) 888 88 88</span>
+        <span class="page-header__link-text">Получить консультацию</span>
       </a>
-      <nav class="site-navigation">
+      <nav class="site-navigation site-navigation-no--js site-navigation--closed">
         <ul class="site-navigation__list">
           <li class="site-navigation__item">
             <a class="site-navigation__link" href="">Услуги</a>
@@ -28,47 +28,49 @@
             <a class="site-navigation__link" href="">FAQ</a>
           </li>
         </ul>
-        <div class="contacts">
-          <span class="contacts__caption">Наши контакты:</span>
-          <ul class="contacts__list">
-            <li class="contacts__item">
-              <a class="contacts__link" href="mailto:example@iphub.com">example@iphub.com</a>
-            </li>
-            <li class="contacts__item">
-              <a class="contacts__link" href="tel:+78888888888">+7 (888) 888 88 88</a>
-            </li>
-            <li class="contacts__item">
-              <a class="contacts__link" href="#">Схема проезда</a>
-            </li>
-          </ul>
-        </div>
-        <div class="socials">
-          <span class="socials__caption">Мы в соцсетях:</span>
-          <ul class="socials__list">
-            <li class="socials__item">
-              <a class="socials__link" href="https://www.facebook.com/IPhub.pro/">Facebook</a>
-            </li>
-            <li class="socials__item">
-              <a class="socials__link" href="https://www.instagram.com/iphub.pro/">Instagram</a>
-            </li>
-          </ul>
-        </div>
-        <div class="adress">
-          <ul class="adress__list">
-            <li class="adress__item">
-              <span class="adress__text">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
-            </li>
-            <li class="adress__item">
-              <span class="adress__text">ИНН: 7703472433</span>
-            </li>
-            <li class="adress__item">
-              <span class="adress__text">КПП: 770301001</span>
-            </li>
-          </ul>
+        <div class="site-navigation__info-wrapper">
+          <div class="contacts">
+            <h4 class="contacts__caption">Наши контакты:</h4>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <a class="contacts__link" href="mailto:example@iphub.com">example@iphub.com</a>
+              </li>
+              <li class="contacts__item">
+                <a class="contacts__link" href="tel:+78888888888">+7 (888) 888 88 88</a>
+              </li>
+              <li class="contacts__item">
+                <a class="contacts__link" href="#">Схема проезда</a>
+              </li>
+            </ul>
+          </div>
+          <div class="socials">
+            <span class="socials__caption">Мы в соцсетях:</span>
+            <ul class="socials__list">
+              <li class="socials__item">
+                <a class="socials__link" href="https://www.facebook.com/IPhub.pro/">Facebook</a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="https://www.instagram.com/iphub.pro/">Instagram</a>
+              </li>
+            </ul>
+          </div>
+          <div class="adress">
+            <ul class="adress__list">
+              <li class="adress__item">
+                <span class="adress__text">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
+              </li>
+              <li class="adress__item">
+                <span class="adress__text">ИНН: 7703472433</span>
+              </li>
+              <li class="adress__item">
+                <span class="adress__text">КПП: 770301001</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-      <button class="page-header__button-open" type="button"></button>
-      <button class="page-header__button-close" type="button"></button>
+      <button class="page-header__button-open button button-disable" type="button"></button>
+      <button class="page-header__button-close button" type="button"></button>
     </div>
   </header>
   <main>
@@ -76,9 +78,11 @@
       <div class="container">
         <h1 class="main-info__title">Индивидуальные правовые решения для защиты и охраны ваших нематериальных активов в России и за рубежом</h1>
         <span class="main-info__caption">ВАШ IP ПАРТНЕР</span>
-        <b class="min-info__slogan">Интеллектуальная собственность</b>
-        <button class="main-info__offer-button">Получить индивидуальную консультацию</button>
-        <a class="main-info__offers-link" href="#">Все услуги</a>
+        <b class="main-info__slogan">Интеллектуальная<br><i>собственность</i></b>
+        <div class="main-info__offers-wrapper">
+          <button class="main-info__offer-button button">Получить индивидуальную консультацию</button>
+          <a class="main-info__offers-link" href="#">Все услуги</a>
+        </div>
       </div>
     </section>
     <section class="about">
@@ -184,8 +188,10 @@
           </li>
         </ul>
         <div class="buttons">
-          <button class="buttons__button-back"></button>
-          <button class="buttons__button-next"></button>
+          <div class="buttons__navigation">
+            <button class="buttons__button-back"></button>
+            <button class="buttons__button-next"></button>
+          </div>
           <button class="buttons__button-catalog">Все услуги</button>
         </div>
       </div>
@@ -198,11 +204,13 @@
         </p>
         <ul class="portfolio__list">
           <li class="portfolio__item">
-            <a href="#">
+            <a class="portfolio__item-link" href="#">
+              <div class="portfolio__item-wrapper">
+                <svg class="portfolio__item-logo" width="103" height="21">
+                  <use href="img/icons/stack.svg#circle"></use>
+                </svg>
+              </div>
               <h3 class="portfolio__item-title">CIRKLE — производитель косметической продукции</h3>
-              <svg class="portfolio__item-logo" width="103" height="21">
-                <use href="img/icons/stack.svg#circle"></use>
-              </svg>
               <p class="portfolio__item-text">
                 Как в результате защиты  мы зарегистрировали бренд российской косметики при наличии оснований для отказа
               </p>
@@ -210,8 +218,10 @@
           </li>
         </ul>
         <div class="buttons">
-          <button class="buttons__button-back"></button>
-          <button class="buttons__button-next"></button>
+          <div class="buttons__navigation">
+            <button class="buttons__button-back"></button>
+            <button class="buttons__button-next"></button>
+          </div>
           <button class="buttons__button-catalog">Все кейсы</button>
         </div>
       </div>
@@ -224,51 +234,57 @@
         </p>
         <ul class="team__list">
           <li class="team__list-item">
-            <b class="team__list-item__name">Раймм Лидия Вячеславовна</b>
-            <span class="team__list-item__profession">Генеральный директор</span>
             <picture>
               <source media="(min-width: 1280px)" src="img/director@1x.jpg 1x, img/director@2x.jpg 2x" width="289" height="320">
               <source media="(min-width: 768px)" src="img/director@1x.jpg 1x, img/director@2x.jpg 2x" width="229" height="254">
               <img class="team__list-item__photo" src="img/director@1x.jpg" srcset="img/director@2x.jpg" alt="фотография директора" width="320" height="355">
             </picture>
+            <b class="team__list-item__name">Раймм Лидия Вячеславовна</b>
+            <span class="team__list-item__profession">Генеральный директор</span>
           </li>
           <li class="team__list-item">
-            <b class="team__list-item__name">Золотов Геннадий Борисович</b>
-            <span class="team__list-item__profession">Руководитель отдела патентно-юридического делопроизводства</span>
             <picture>
               <source media="(min-width: 1280px)" src="img/chief@1x.jpg 1x, img/chief@2x.jpg 2x" width="289" height="320">
               <source media="(min-width: 768px)" src="img/chief@1x.jpg 1x, img/chief@2x.jpg 2x" width="229" height="254">
               <img class="team__list-item__photo" src="img/chief@1x.jpg" srcset="img/chief@2x.jpg" alt="фотография руководителя" width="320" height="355">
             </picture>
+            <b class="team__list-item__name">Золотов Геннадий Борисович</b>
+            <span class="team__list-item__profession">Руководитель отдела патентно-юридического делопроизводства</span>
           </li>
           <li class="team__list-item">
-            <b class="team__list-item__name">Осоргина Екатерина Александровна</b>
-            <span class="team__list-item__profession">Патентный поверенный РФ</span>
             <picture>
               <source media="(min-width: 1280px)" src="img/manager-1@1x.jpg 1x, img/manager-1@2x.jpg 2x" width="289" height="320">
               <source media="(min-width: 768px)" src="img/manager-1@1x.jpg 1x, img/manager-1@2x.jpg 2x" width="229" height="254">
               <img class="team__list-item__photo" src="img/manager-1@1x.jpg" srcset="img/manager-1@2x.jpg" alt="фотография поверенного" width="320" height="355">
             </picture>
+            <b class="team__list-item__name">Осоргина Екатерина Александровна</b>
+            <span class="team__list-item__profession">Патентный поверенный РФ</span>
           </li>
           <li class="team__list-item">
-            <b class="team__list-item__name">Рачеева Юлия Геннадьевна</b>
-            <span class="team__list-item__profession">Патентный поверенный РФ</span>
             <picture>
               <source media="(min-width: 1280px)" src="img/manager-2@1x.jpg 1x, img/manager-2@2x.jpg 2x" width="289" height="320">
               <source media="(min-width: 768px)" src="img/manager-2@1x.jpg 1x, img/manager-2@2x.jpg 2x" width="229" height="254">
               <img class="team__list-item__photo" src="img/manager-2@1x.jpg" srcset="img/manager-2@2x.jpg" alt="фотография поверенного" width="320" height="355">
             </picture>
+            <b class="team__list-item__name">Рачеева Юлия Геннадьевна</b>
+            <span class="team__list-item__profession">Патентный поверенный РФ</span>
           </li>
           <li class="team__list-item">
-            <b class="team__list-item__name">Пахоменко Алина Аликовна</b>
-            <span class="team__list-item__profession">Адвокат</span>
             <picture>
               <source media="(min-width: 1280px)" src="img/lawyer@1x.jpg 1x, img/lawyer@2x.jpg 2x" width="289" height="320">
               <source media="(min-width: 768px)" src="img/lawyer@1x.jpg 1x, img/lawyer@2x.jpg 2x" width="229" height="254">
               <img class="team__list-item__photo" src="img/lawyer@1x.jpg" srcset="img/lawyer@2x.jpg" alt="фотография адвоката" width="320" height="355">
             </picture>
+            <b class="team__list-item__name">Пахоменко Алина Аликовна</b>
+            <span class="team__list-item__profession">Адвокат</span>
           </li>
         </ul>
+        <div class="buttons buttons--item-position">
+          <div class="buttons__navigation buttons__navigation--item-position">
+            <button class="buttons__button-back"></button>
+            <button class="buttons__button-next"></button>
+          </div>
+        </div>
       </div>
     </section>
     <section class="feedback">
@@ -277,7 +293,7 @@
         <p class="feedback__text">
           У нас есть решения для всех ваших потребностей в сфере защиты и регистрации интеллектуальной собственности
         </p>
-        <button class="feedback__button" type="button">Получить индивидуальную консультацию</button>
+        <button class="feedback__button" type="button">Получить индивидуальную<br>консультацию</button>
       </div>
     </section>
   </main>
@@ -289,45 +305,48 @@
       <p class="page-footer__text">
         Общество с ограниченной ответственностью «Центр интеллектуальной собственности и инноваций „АйПиХаб“»
       </p>
-      <div class="adress">
+      <div class="adress adress--footer-position adress--footer-decore">
         <ul class="adress__list">
           <li class="adress__item">
-            <span class="adress__text">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
+            <span class="adress__text adress__text--footer-color">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
           </li>
           <li class="adress__item">
-            <span class="adress__text">ИНН: 7703472433</span>
+            <span class="adress__text adress__text--footer-color">ИНН: 7703472433</span>
           </li>
           <li class="adress__item">
-            <span class="adress__text">КПП: 770301001</span>
+            <span class="adress__text adress__text--footer-color">КПП: 770301001</span>
           </li>
         </ul>
       </div>
-      <nav class="site-navigation">
-        <ul class="site-navigation__list">
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="">Услуги</a>
-          </li>
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="">Кейсы</a>
-          </li>
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="">FAQ</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="contacts">
-        <span class="contacts__caption">Наши контакты:</span>
-        <ul class="contacts__list">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:example@iphub.com">example@iphub.com</a>
-          </li>
-          <li class="contacts__item">
-            <a class="contacts__link" href="tel:+78888888888">+7 (888) 888 88 88</a>
-          </li>
-          <li class="contacts__item">
-            <a class="contacts__link" href="#">Схема проезда</a>
-          </li>
-        </ul>
+      <div class="page-footer__info-wrapper">
+        <nav class="site-navigation site-navigation--footer-position">
+          <h4 class="site-navigation__caption">Навигация:</h4>
+          <ul class="site-navigation__list">
+            <li class="site-navigation__item">
+              <a class="site-navigation__link site-navigation__link--footer-text-size" href="">Услуги</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link site-navigation__link--footer-text-size" href="">Кейсы</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link site-navigation__link--footer-text-size" href="">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="contacts">
+          <h4 class="contacts__caption">Наши контакты:</h4>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:example@iphub.com">example@iphub.com</a>
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link" href="tel:+78888888888">+7 (888) 888 88 88</a>
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link" href="#">Схема проезда</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="socials">
         <span class="socials__caption">Мы в соцсетях:</span>
@@ -347,5 +366,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/script.js" type="module"></script>
 </body>
 </html>

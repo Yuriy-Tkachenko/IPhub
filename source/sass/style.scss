@@ -5,3 +5,21 @@
 @import "global/mixins.scss";
 
 //Blocks
+@import "blocks/page-header.scss";
+@import "blocks/logo.scss";
+@import "blocks/site-navigation.scss";
+@import "blocks/button.scss";
+@import "blocks/page-header__button-close.scss";
+@import "blocks/page-header__button-open.scss";
+@import "blocks/contacts.scss";
+@import "blocks/socials.scss";
+@import "blocks/adress.scss";
+@import "blocks/main-info.scss";
+@import "blocks/about.scss";
+@import "blocks/clients.scss";
+@import "blocks/offers.scss";
+@import "blocks/buttons.scss";
+@import "blocks/portfolio.scss";
+@import "blocks/team.scss";
+@import "blocks/feedback.scss";
+@import "blocks/page-footer.scss";

@@ -1,0 +1,30 @@
+.page-header__button-close {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background-color: $grey-gradient-back;
+  top: 12px;
+  right: 22px;
+  border-radius: 5px;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background-color: $basic-white;
+    right: 8px;
+  }
+  
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media(min-width: $desktop-width) {
+    display: none;
+  }
+}

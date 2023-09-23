@@ -24,8 +24,9 @@ ul {
 body {
   margin: 0;
   font-family: "Montserrat", serif;
-  background: $dark-back;
+  font-weight: 500;
   color: $basic-white;
+  background-color: $dark-color;
 }
 
 .visually-hidden {

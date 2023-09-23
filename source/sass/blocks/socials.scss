@@ -1,0 +1,27 @@
+.socials {
+}
+
+.socials__caption {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 160%;
+  color: $basic-grey;
+
+  @media(min-width: $tablet-width) {
+    font-size: 18px;
+  }
+}
+
+.socials__list {
+  display: flex;
+  margin: 20px 0 30px 0;
+}
+
+.socials__item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.socials__link {
+}

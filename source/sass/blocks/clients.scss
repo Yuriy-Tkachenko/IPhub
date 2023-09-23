@@ -1,0 +1,36 @@
+.clients {
+}
+.container {
+}
+
+.clients__title {
+  @include title;
+  margin: 0 0 14px 0;
+}
+
+.clients__text {
+  font-size: 14px;
+  font-weight: 500;
+  color: $light-grey;
+  margin-bottom: 39px;
+}
+
+.clietns__list {
+  padding-bottom: 60px;
+}
+
+.clients__item {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.clients__item-logo {
+}
