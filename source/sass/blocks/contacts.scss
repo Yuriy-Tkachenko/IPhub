@@ -13,6 +13,12 @@
   }
 }
 
+.contacts__caption--footer-position {
+  @media(min-width: $tablet-width) {
+    margin: 0 0 20px 0;
+  }
+}
+
 .contacts__list {
   margin-top: 20px;
 }

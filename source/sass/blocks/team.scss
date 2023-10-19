@@ -8,6 +8,10 @@
   @media(min-resolution: 2dppx) {
     background-image: url(../../img/backgroud_grey@2x.jpg);
   }
+
+  @media(mni-width: $tablet-width) {
+    padding-top: 80px;
+  }
 }
 
 .container {
@@ -17,15 +21,31 @@
   @include title;
   color: $dark-color;
   margin: 0 0 12px 0;
+
+  @media(min-width: $tablet-width) {
+    margin-bottom: 14px;
+  }
 }
 
 .team__text {
   @include text;
   margin-bottom: 35px;
+
+  @media(min-width: $tablet-width) {
+    max-width: 670px;
+    margin-bottom: 40px;
+  }
 }
 
 .team__list {
   width: 100%;
+
+  @media(min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    gap: 20px;
+  }
 }
 
 .team__list-item {
@@ -37,6 +57,15 @@
 
   &:not(:last-child) {
     margin-bottom: 25px;
+  }
+
+  @media(min-width: $tablet-width) {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }
 

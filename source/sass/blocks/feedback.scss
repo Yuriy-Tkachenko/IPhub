@@ -1,6 +1,26 @@
 .feedback {
   background-color: $basic-red;
   padding: 40px 0;
+
+  @media(min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 242px;
+      background-image: url(../../img/offer-group-decore@1x.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 76px;
+      right: 5px;
+
+      @media(min-resolution: 2dppx) {
+        background-image: url(../../img/offer-group-decore@2x.png);
+      }
+    }
+  }
 }
 
 .container {
@@ -11,6 +31,11 @@
   text-align: center;
   margin-top: 0;
   margin-bottom: 12px;
+
+  @media(min-width: $tablet-width) {
+    text-align: start;
+    margin-bottom: 14px;
+  }
 }
 
 .feedback__text {
@@ -19,6 +44,12 @@
   opacity: 0.75;
   text-align: center;
   margin-bottom: 28px;
+
+  @media(min-width: $tablet-width) {
+    text-align: start;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
 }
 
 .feedback__button {
@@ -44,5 +75,14 @@
     left: 0;
     top: 0;
     rotate: -5deg;
+  }
+
+  @media(min-width: $tablet-width) {
+    font-size: 16px;
+    margin: 0;
+
+    &::after {
+      content: none;
+    }
   }
 }

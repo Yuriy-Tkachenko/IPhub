@@ -16,7 +16,7 @@
         <span class="page-header__link-number">+7 (888) 888 88 88</span>
         <span class="page-header__link-text">Получить консультацию</span>
       </a>
-      <nav class="site-navigation site-navigation-no--js site-navigation--closed">
+      <nav class="site-navigation site-navigation-no--js site-navigation--closed site-navigation--header-position">
         <ul class="site-navigation__list">
           <li class="site-navigation__item">
             <a class="site-navigation__link" href="">Услуги</a>
@@ -186,13 +186,29 @@
               </svg>
             </a>
           </li>
+          <li class="offers__item">
+            <a class="offers__item-link" href="#">
+              <span class="offers__item-caption">Получение патента на промышленный образец</span>
+              <svg class="offers__item-logo" width="129" height="145">
+                <use href="img/icons/stack.svg#offers-2-logo"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="offers__item">
+            <a class="offers__item-link" href="#">
+              <span class="offers__item-caption">Оформление прав ИС в проектах и бизнесе</span>
+              <svg class="offers__item-logo" width="129" height="145">
+                <use href="img/icons/stack.svg#offers-3-logo"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
         <div class="buttons">
-          <div class="buttons__navigation">
+          <div class="buttons__navigation buttons__navigation--offers-position">
             <button class="buttons__button-back"></button>
             <button class="buttons__button-next"></button>
           </div>
-          <button class="buttons__button-catalog">Все услуги</button>
+          <button class="buttons__button-catalog buttons__button-catalog--offers-position">Все услуги</button>
         </div>
       </div>
     </section>
@@ -222,7 +238,7 @@
             <button class="buttons__button-back"></button>
             <button class="buttons__button-next"></button>
           </div>
-          <button class="buttons__button-catalog">Все кейсы</button>
+          <button class="buttons__button-catalog buttons__button-catalog--portfolio-position">Все кейсы</button>
         </div>
       </div>
     </section>
@@ -299,29 +315,31 @@
   </main>
   <footer class="page-footer">
     <div class="container">
-      <svg class="logo" width="129" height="29">
-        <use href="img/icons/stack.svg#logo"></use>
-      </svg>
-      <p class="page-footer__text">
-        Общество с ограниченной ответственностью «Центр интеллектуальной собственности и инноваций „АйПиХаб“»
-      </p>
-      <div class="adress adress--footer-position adress--footer-decore">
-        <ul class="adress__list">
-          <li class="adress__item">
-            <span class="adress__text adress__text--footer-color">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
-          </li>
-          <li class="adress__item">
-            <span class="adress__text adress__text--footer-color">ИНН: 7703472433</span>
-          </li>
-          <li class="adress__item">
-            <span class="adress__text adress__text--footer-color">КПП: 770301001</span>
-          </li>
-        </ul>
+      <div class="page-footer__adress-info-wrapper page-footer__adress-info-wrapper--decore">
+        <svg class="logo logo--page-footer-position logo--page-footer-size" width="129" height="29">
+          <use href="img/icons/stack.svg#logo"></use>
+        </svg>
+        <p class="page-footer__text">
+          Общество с ограниченной ответственностью «Центр интеллектуальной собственности и инноваций „АйПиХаб“»
+        </p>
+        <div class="adress adress--footer-position adress--footer-decore">
+          <ul class="adress__list">
+            <li class="adress__item">
+              <span class="adress__text adress__text--footer-color">123317, г. Москва, Пресненская наб., д.8, стр. 1, эт. 3, п. 1, оф. 10</span>
+            </li>
+            <li class="adress__item">
+              <span class="adress__text adress__text--footer-color">ИНН: 7703472433</span>
+            </li>
+            <li class="adress__item">
+              <span class="adress__text adress__text--footer-color">КПП: 770301001</span>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="page-footer__info-wrapper">
         <nav class="site-navigation site-navigation--footer-position">
-          <h4 class="site-navigation__caption">Навигация:</h4>
-          <ul class="site-navigation__list">
+          <h4 class="site-navigation__caption site-navigation__caption--footer-position">Навигация по сайту:</h4>
+          <ul class="site-navigation__list site-navigation__list--footer-position">
             <li class="site-navigation__item">
               <a class="site-navigation__link site-navigation__link--footer-text-size" href="">Услуги</a>
             </li>
@@ -334,7 +352,7 @@
           </ul>
         </nav>
         <div class="contacts">
-          <h4 class="contacts__caption">Наши контакты:</h4>
+          <h4 class="contacts__caption contacts__caption--footer-position">Наши контакты:</h4>
           <ul class="contacts__list">
             <li class="contacts__item">
               <a class="contacts__link" href="mailto:example@iphub.com">example@iphub.com</a>
@@ -347,17 +365,17 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="socials">
-        <span class="socials__caption">Мы в соцсетях:</span>
-        <ul class="socials__list">
-          <li class="socials__item">
-            <a class="socials__link" href="https://www.facebook.com/IPhub.pro/">Facebook</a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link" href="https://www.instagram.com/iphub.pro/">Instagram</a>
-          </li>
-        </ul>
+        <div class="socials">
+          <span class="socials__caption">Мы в соцсетях:</span>
+          <ul class="socials__list socials__list--footer-position">
+            <li class="socials__item socials__item--footer-position">
+              <a class="socials__link" href="https://www.facebook.com/IPhub.pro/">Facebook</a>
+            </li>
+            <li class="socials__item socials__item--footer-position">
+              <a class="socials__link" href="https://www.instagram.com/iphub.pro/">Instagram</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="page-footer__service-info">
         <a class="page-footer__service-link" href="#">Публичная оферта</a>

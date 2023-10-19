@@ -7,6 +7,10 @@
   font-family: STIXTwoText;
   font-size: 24px;
   line-height: 135%;
+
+  @media(min-width: $tablet-width) {
+    font-size: 32px;
+  }
 }
 
 @mixin text {
@@ -14,4 +18,8 @@
   font-weight: 500;
   line-height: 160%;
   color: $light-grey;
+
+  @media(min-width: $tablet-width) {
+    font-size: 16px;
+  }
 }

@@ -17,9 +17,24 @@
   margin: 20px 0 30px 0;
 }
 
+.socials__list--footer-position {
+  @media(min-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+
 .socials__item {
   &:not(:last-child) {
     margin-right: 20px;
+  }
+}
+
+.socials__item--footer-position {
+  @media(min-width: $tablet-width) {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 }
 

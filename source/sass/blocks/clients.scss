@@ -13,10 +13,21 @@
   font-weight: 500;
   color: $light-grey;
   margin-bottom: 39px;
+
+  @media(min-width: $tablet-width) {
+    max-width: 640px;
+  }
 }
 
 .clietns__list {
   padding-bottom: 60px;
+
+  @media(min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 80px;
+  }
 }
 
 .clients__item {
@@ -30,7 +41,14 @@
   &:not(:last-child) {
     margin-bottom: 15px;
   }
+
+  @media(min-width: $tablet-width) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .clients__item-logo {
+  mask-image: linear-gradient(to bottom, transparent, #000);
 }
