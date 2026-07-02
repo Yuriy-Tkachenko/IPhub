@@ -55,15 +55,11 @@ export default function Trademark({ onOpenConsult }) {
   const visibleSlideIndex = Math.min(slideIndex, getMaxSlideIndex());
 
   const handleNextSlide = () => {
-    if (slideIndex < getMaxSlideIndex()) {
-      setSlideIndex(slideIndex + 1);
-    }
+    setSlideIndex((current) => Math.min(current + 1, getMaxSlideIndex()));
   };
 
   const handlePrevSlide = () => {
-    if (slideIndex > 0) {
-      setSlideIndex(slideIndex - 1);
-    }
+    setSlideIndex((current) => Math.max(current - 1, 0));
   };
   const relatedSwipeHandlers = useSwipeNavigation({
     onNext: handleNextSlide,

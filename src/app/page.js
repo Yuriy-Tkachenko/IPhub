@@ -36,10 +36,10 @@ export default function Home({ onOpenConsult }) {
   const visibleCaseIndex = Math.min(caseIndex, getMaxCaseIndex());
 
   const handleNextCase = () => {
-    if (caseIndex < getMaxCaseIndex()) setCaseIndex(caseIndex + 1);
+    setCaseIndex((current) => Math.min(current + 1, getMaxCaseIndex()));
   };
   const handlePrevCase = () => {
-    if (caseIndex > 0) setCaseIndex(caseIndex - 1);
+    setCaseIndex((current) => Math.max(current - 1, 0));
   };
   const caseSwipeHandlers = useSwipeNavigation({
     onNext: handleNextCase,
@@ -59,10 +59,10 @@ export default function Home({ onOpenConsult }) {
   const visibleTeamIndex = Math.min(teamIndex, getMaxTeamIndex());
 
   const handleNextTeam = () => {
-    if (teamIndex < getMaxTeamIndex()) setTeamIndex(teamIndex + 1);
+    setTeamIndex((current) => Math.min(current + 1, getMaxTeamIndex()));
   };
   const handlePrevTeam = () => {
-    if (teamIndex > 0) setTeamIndex(teamIndex - 1);
+    setTeamIndex((current) => Math.max(current - 1, 0));
   };
   const teamSwipeHandlers = useSwipeNavigation({
     onNext: handleNextTeam,

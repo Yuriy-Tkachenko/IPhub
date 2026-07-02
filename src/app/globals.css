@@ -623,10 +623,12 @@ button {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 56px;
+    gap: 32px;
 }
 
 .services-header-btn {
     margin-bottom: 48px;
+    flex-shrink: 0;
 }
 
 .services-grid {
@@ -922,6 +924,19 @@ button {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 56px;
+    gap: 32px;
+}
+
+.cases-header > div:first-child {
+    max-width: 760px;
+}
+
+.cases-header-actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    padding-bottom: 6px;
 }
 
 .cases-carousel-wrapper {
@@ -2692,6 +2707,78 @@ button {
         padding: 92px 24px 36px;
     }
 
+    .services-section {
+        padding: 72px 0;
+    }
+
+    .services-header,
+    .cases-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 28px;
+    }
+
+    .services-header-btn,
+    .cases-header-actions {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .cases-header-actions,
+    .cases-header-actions .btn-secondary,
+    .services-header-btn {
+        width: 100%;
+    }
+
+    .cases-header-actions .btn-secondary,
+    .services-header-btn {
+        justify-content: center;
+        padding: 12px 18px;
+    }
+
+    .services-grid {
+        gap: 14px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .service-card.active {
+        min-height: auto;
+    }
+
+    .service-icon-box {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 14px;
+    }
+
+    .service-icon-box svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .service-card-title {
+        font-size: 18px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .service-card-desc {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 16px;
+    }
+
+    .service-card-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
     .carousel-control.prev {
         left: 8px;
     }
@@ -2799,6 +2886,12 @@ button {
     
     .section-title {
         font-size: 30px;
+    }
+
+    .services-header .section-desc,
+    .cases-header .section-desc {
+        font-size: 14px;
+        line-height: 1.5;
     }
     
     .services-grid {
