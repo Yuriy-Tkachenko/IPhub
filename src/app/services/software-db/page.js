@@ -15,6 +15,9 @@ export default function SoftwareDb({ onOpenConsult }) {
 
 
   const [slideIndex, setSlideIndex] = useState(0);
+  const getSliderTranslate = (index, visibleCount, gap = 24) => (
+    `translateX(calc(-${(index * 100) / visibleCount}% - ${(index * gap) / visibleCount}px))`
+  );
 
   const relatedServices = [
     {
@@ -58,8 +61,8 @@ export default function SoftwareDb({ onOpenConsult }) {
   const relatedSwipeHandlers = useSwipeNavigation({
     onNext: handleNextSlide,
     onPrev: handlePrevSlide,
-    canNext: slideIndex < getMaxSlideIndex(),
-    canPrev: slideIndex > 0,
+    canNext: visibleSlideIndex < getMaxSlideIndex(),
+    canPrev: visibleSlideIndex > 0,
   });
 
   return (
@@ -190,7 +193,7 @@ export default function SoftwareDb({ onOpenConsult }) {
               <div 
                 className="related-track" 
                 style={{ 
-                  transform: `translateX(-${visibleSlideIndex * (100 / getVisibleRelatedCount())}%)`,
+                  transform: getSliderTranslate(visibleSlideIndex, getVisibleRelatedCount()),
                   transition: 'transform 0.4s ease'
                 }}
               >

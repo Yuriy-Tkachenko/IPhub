@@ -29,6 +29,9 @@ export default function Home({ onOpenConsult }) {
   // Sliders State
   const [caseIndex, setCaseIndex] = useState(0);
   const [teamIndex, setTeamIndex] = useState(0);
+  const getSliderTranslate = (index, visibleCount, gap = 24) => (
+    `translateX(calc(-${(index * 100) / visibleCount}% - ${(index * gap) / visibleCount}px))`
+  );
 
   // Cases Slider Navigation
   const getVisibleCasesCount = () => (width <= 768 ? 1 : 2);
@@ -44,8 +47,8 @@ export default function Home({ onOpenConsult }) {
   const caseSwipeHandlers = useSwipeNavigation({
     onNext: handleNextCase,
     onPrev: handlePrevCase,
-    canNext: caseIndex < getMaxCaseIndex(),
-    canPrev: caseIndex > 0,
+    canNext: visibleCaseIndex < getMaxCaseIndex(),
+    canPrev: visibleCaseIndex > 0,
   });
 
   // Team Slider Navigation
@@ -67,8 +70,8 @@ export default function Home({ onOpenConsult }) {
   const teamSwipeHandlers = useSwipeNavigation({
     onNext: handleNextTeam,
     onPrev: handlePrevTeam,
-    canNext: teamIndex < getMaxTeamIndex(),
-    canPrev: teamIndex > 0,
+    canNext: visibleTeamIndex < getMaxTeamIndex(),
+    canPrev: visibleTeamIndex > 0,
   });
 
   // Quiz State
@@ -680,7 +683,7 @@ export default function Home({ onOpenConsult }) {
               <div 
                 className="cases-track" 
                 style={{ 
-                  transform: `translateX(-${visibleCaseIndex * (100 / getVisibleCasesCount())}%)`,
+                  transform: getSliderTranslate(visibleCaseIndex, getVisibleCasesCount()),
                   transition: 'transform 0.4s ease'
                 }}
               >
@@ -778,7 +781,7 @@ export default function Home({ onOpenConsult }) {
               <div 
                 className="team-track"
                 style={{ 
-                  transform: `translateX(-${visibleTeamIndex * (100 / getVisibleTeamCount())}%)`,
+                  transform: getSliderTranslate(visibleTeamIndex, getVisibleTeamCount()),
                   transition: 'transform 0.4s ease'
                 }}
               >
