@@ -1,14 +1,14 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSwipeNavigation } from '@/hooks/useSwipeNavigation';
 
 export default function Home({ onOpenConsult }) {
   // Window Width for Responsive Sliders
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(() => (typeof window === 'undefined' ? 1200 : window.innerWidth));
   
 
   useEffect(() => {
-    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -33,6 +33,7 @@ export default function Home({ onOpenConsult }) {
   // Cases Slider Navigation
   const getVisibleCasesCount = () => (width <= 768 ? 1 : 2);
   const getMaxCaseIndex = () => Math.max(0, 4 - getVisibleCasesCount());
+  const visibleCaseIndex = Math.min(caseIndex, getMaxCaseIndex());
 
   const handleNextCase = () => {
     if (caseIndex < getMaxCaseIndex()) setCaseIndex(caseIndex + 1);
@@ -40,6 +41,12 @@ export default function Home({ onOpenConsult }) {
   const handlePrevCase = () => {
     if (caseIndex > 0) setCaseIndex(caseIndex - 1);
   };
+  const caseSwipeHandlers = useSwipeNavigation({
+    onNext: handleNextCase,
+    onPrev: handlePrevCase,
+    canNext: caseIndex < getMaxCaseIndex(),
+    canPrev: caseIndex > 0,
+  });
 
   // Team Slider Navigation
   const getVisibleTeamCount = () => {
@@ -49,6 +56,7 @@ export default function Home({ onOpenConsult }) {
     return 3; // Desktop limit
   };
   const getMaxTeamIndex = () => Math.max(0, 8 - getVisibleTeamCount());
+  const visibleTeamIndex = Math.min(teamIndex, getMaxTeamIndex());
 
   const handleNextTeam = () => {
     if (teamIndex < getMaxTeamIndex()) setTeamIndex(teamIndex + 1);
@@ -56,17 +64,12 @@ export default function Home({ onOpenConsult }) {
   const handlePrevTeam = () => {
     if (teamIndex > 0) setTeamIndex(teamIndex - 1);
   };
-
-  // Clamp slider indexes on window resize to prevent overflow
-  useEffect(() => {
-    const maxC = getMaxCaseIndex();
-    if (caseIndex > maxC) setCaseIndex(maxC);
-  }, [width, caseIndex]);
-
-  useEffect(() => {
-    const maxT = getMaxTeamIndex();
-    if (teamIndex > maxT) setTeamIndex(maxT);
-  }, [width, teamIndex]);
+  const teamSwipeHandlers = useSwipeNavigation({
+    onNext: handleNextTeam,
+    onPrev: handlePrevTeam,
+    canNext: teamIndex < getMaxTeamIndex(),
+    canPrev: teamIndex > 0,
+  });
 
   // Quiz State
   const quizSteps = [
@@ -667,17 +670,17 @@ export default function Home({ onOpenConsult }) {
           </div>
 
           <div className="cases-carousel-wrapper">
-            <button className="carousel-control prev" onClick={handlePrevCase} disabled={caseIndex === 0} aria-label="Previous case">
+            <button className="carousel-control prev" onClick={handlePrevCase} disabled={visibleCaseIndex === 0} aria-label="Previous case">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
 
-            <div className="cases-carousel-container">
+            <div className="cases-carousel-container" {...caseSwipeHandlers}>
               <div 
                 className="cases-track" 
                 style={{ 
-                  transform: `translateX(-${caseIndex * (100 / getVisibleCasesCount())}%)`,
+                  transform: `translateX(-${visibleCaseIndex * (100 / getVisibleCasesCount())}%)`,
                   transition: 'transform 0.4s ease'
                 }}
               >
@@ -747,7 +750,7 @@ export default function Home({ onOpenConsult }) {
               </div>
             </div>
 
-            <button className="carousel-control next" onClick={handleNextCase} disabled={caseIndex >= getMaxCaseIndex()} aria-label="Next case">
+            <button className="carousel-control next" onClick={handleNextCase} disabled={visibleCaseIndex >= getMaxCaseIndex()} aria-label="Next case">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -765,17 +768,17 @@ export default function Home({ onOpenConsult }) {
           </div>
 
           <div className="team-slider-wrapper">
-            <button className="carousel-control prev" onClick={handlePrevTeam} disabled={teamIndex === 0} aria-label="Previous slide">
+            <button className="carousel-control prev" onClick={handlePrevTeam} disabled={visibleTeamIndex === 0} aria-label="Previous slide">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
 
-            <div className="team-slider-container">
+            <div className="team-slider-container" {...teamSwipeHandlers}>
               <div 
                 className="team-track"
                 style={{ 
-                  transform: `translateX(-${teamIndex * (100 / getVisibleTeamCount())}%)`,
+                  transform: `translateX(-${visibleTeamIndex * (100 / getVisibleTeamCount())}%)`,
                   transition: 'transform 0.4s ease'
                 }}
               >
@@ -853,7 +856,7 @@ export default function Home({ onOpenConsult }) {
               </div>
             </div>
 
-            <button className="carousel-control next" onClick={handleNextTeam} disabled={teamIndex >= getMaxTeamIndex()} aria-label="Next slide">
+            <button className="carousel-control next" onClick={handleNextTeam} disabled={visibleTeamIndex >= getMaxTeamIndex()} aria-label="Next slide">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

@@ -72,7 +72,7 @@ export default function Header({ onOpenConsult }) {
           <div className="header-actions">
             <a href="tel:+78888888888" className="phone-link">+7 (888) 888 88 88</a>
             <button className="btn btn-consult-trigger" onClick={onOpenConsult}>Получить консультацию</button>
-            <button className={`burger-menu ${drawerOpen ? 'active' : ''}`} id="burger-menu" aria-label="Toggle menu" onClick={toggleDrawer}>
+            <button className={`burger-menu ${drawerOpen ? 'active' : ''}`} id="burger-menu" aria-label={drawerOpen ? 'Закрыть меню' : 'Открыть меню'} aria-expanded={drawerOpen} onClick={toggleDrawer}>
               <span></span>
               <span></span>
               <span></span>
@@ -83,6 +83,10 @@ export default function Header({ onOpenConsult }) {
 
       {/* Mobile Nav Drawer */}
       <div className={`mobile-drawer ${drawerOpen ? 'active' : ''}`} id="mobile-drawer">
+        <button className="mobile-drawer-close" type="button" aria-label="Закрыть меню" onClick={closeDrawer}>
+          <span></span>
+          <span></span>
+        </button>
         <nav className="mobile-nav">
           <Link href="/services" className="mobile-nav-link" onClick={handleServicesClick}>Услуги</Link>
           <Link href="/cases" className="mobile-nav-link" onClick={closeDrawer}>Кейсы</Link>

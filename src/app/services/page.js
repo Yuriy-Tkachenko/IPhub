@@ -99,7 +99,7 @@ export default function Services({ onOpenConsult }) {
       {/* Services List Grid */}
       <section className="services-directory-section" style={{ paddingBottom: '80px' }}>
         <div className="container">
-          <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '30px' }}>
+          <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '30px' }}>
             {servicesList.map((item) => (
               <div key={item.id} className="service-card" style={{ height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '35px 30px' }}>
                 <div>

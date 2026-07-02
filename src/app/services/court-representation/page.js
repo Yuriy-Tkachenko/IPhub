@@ -1,12 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSwipeNavigation } from '@/hooks/useSwipeNavigation';
 
 export default function CourtRepresentation({ onOpenConsult }) {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(() => (typeof window === 'undefined' ? 1200 : window.innerWidth));
 
   useEffect(() => {
-    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -46,6 +46,7 @@ export default function CourtRepresentation({ onOpenConsult }) {
   };
 
   const getMaxSlideIndex = () => Math.max(0, relatedServices.length - getVisibleRelatedCount());
+  const visibleSlideIndex = Math.min(slideIndex, getMaxSlideIndex());
 
   const handleNextSlide = () => {
     if (slideIndex < getMaxSlideIndex()) setSlideIndex(slideIndex + 1);
@@ -54,12 +55,12 @@ export default function CourtRepresentation({ onOpenConsult }) {
   const handlePrevSlide = () => {
     if (slideIndex > 0) setSlideIndex(slideIndex - 1);
   };
-
-  // Clamp slider index on window resize to prevent overflow
-  useEffect(() => {
-    const maxS = getMaxSlideIndex();
-    if (slideIndex > maxS) setSlideIndex(maxS);
-  }, [width, slideIndex]);
+  const relatedSwipeHandlers = useSwipeNavigation({
+    onNext: handleNextSlide,
+    onPrev: handlePrevSlide,
+    canNext: slideIndex < getMaxSlideIndex(),
+    canPrev: slideIndex > 0,
+  });
 
   return (
     <>
@@ -184,11 +185,11 @@ export default function CourtRepresentation({ onOpenConsult }) {
           </div>
 
           <div className="related-slider-wrapper">
-            <div className="related-slider-container">
+            <div className="related-slider-container" {...relatedSwipeHandlers}>
               <div 
                 className="related-track" 
                 style={{ 
-                  transform: `translateX(-${slideIndex * (100 / getVisibleRelatedCount())}%)`,
+                  transform: `translateX(-${visibleSlideIndex * (100 / getVisibleRelatedCount())}%)`,
                   transition: 'transform 0.4s ease'
                 }}
               >
@@ -211,12 +212,12 @@ export default function CourtRepresentation({ onOpenConsult }) {
             </div>
 
             <div className="related-controls-row">
-              <button className="carousel-control prev" onClick={handlePrevSlide} disabled={slideIndex === 0} aria-label="Previous slide">
+              <button className="carousel-control prev" onClick={handlePrevSlide} disabled={visibleSlideIndex === 0} aria-label="Previous slide">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <button className="carousel-control next" onClick={handleNextSlide} disabled={slideIndex >= getMaxSlideIndex()} aria-label="Next slide">
+              <button className="carousel-control next" onClick={handleNextSlide} disabled={visibleSlideIndex >= getMaxSlideIndex()} aria-label="Next slide">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
