@@ -32,11 +32,38 @@ export default function Home({ onOpenConsult }) {
   const getSliderTranslate = (index, visibleCount, gap = 24) => (
     `translateX(calc(-${(index * 100) / visibleCount}% - ${(index * gap) / visibleCount}px))`
   );
+  const realizedCases = [
+    {
+      logo: 'CIRKLE',
+      logoClass: '',
+      client: 'CIRKLE — производитель косметической продукции',
+      desc: 'Как в результате защиты мы зарегистрировали бренд российской косметики при наличии оснований для отказа.',
+    },
+    {
+      logo: 'Camera IQ',
+      logoClass: 'bg-purple',
+      client: 'Camera IQ — производитель систем машинного зрения',
+      desc: 'Защита прав после ребрендинга. Как провести успешную регистрацию товарного знака в сжатые сроки.',
+    },
+    {
+      logo: 'Hands',
+      logoClass: 'bg-blue',
+      client: 'Hands — строительная экосистема',
+      desc: 'Разработка патентной стратегии и комплексная защита интерфейсов мобильного приложения в Роспатенте.',
+    },
+    {
+      logo: 'FishPro',
+      logoClass: 'bg-green',
+      client: 'FishPro — рыболовные принадлежности',
+      desc: 'Пресечение продажи контрафактной продукции на маркетплейсах через защиту авторских прав на фотографии и промдизайн.',
+    },
+  ];
 
   // Cases Slider Navigation
   const getVisibleCasesCount = () => (width <= 768 ? 1 : 2);
-  const getMaxCaseIndex = () => Math.max(0, 4 - getVisibleCasesCount());
+  const getMaxCaseIndex = () => Math.max(0, realizedCases.length - getVisibleCasesCount());
   const visibleCaseIndex = Math.min(caseIndex, getMaxCaseIndex());
+  const visibleCases = realizedCases.slice(visibleCaseIndex, visibleCaseIndex + getVisibleCasesCount());
 
   const handleNextCase = () => {
     setCaseIndex((current) => Math.min(current + 1, getMaxCaseIndex()));
@@ -680,76 +707,23 @@ export default function Home({ onOpenConsult }) {
             </button>
 
             <div className="cases-carousel-container" {...caseSwipeHandlers}>
-              <div 
-                className="cases-track" 
-                style={{ 
-                  transform: getSliderTranslate(visibleCaseIndex, getVisibleCasesCount()),
-                  transition: 'transform 0.4s ease'
-                }}
-              >
-                {/* Case Card 1 */}
-                <div className="case-card" style={{ flex: `0 0 calc((100% - ${(getVisibleCasesCount() - 1) * 24}px) / ${getVisibleCasesCount()})` }}>
-                  <div className="case-logo-box">
-                    <span className="case-logo-text">CIRKLE</span>
+              <div className="cases-track">
+                {visibleCases.map((item) => (
+                  <div key={item.logo} className="case-card">
+                    <div className={`case-logo-box ${item.logoClass}`}>
+                      <span className="case-logo-text">{item.logo}</span>
+                    </div>
+                    <div className="case-info">
+                      <h4 className="case-client">{item.client}</h4>
+                      <p className="case-desc">{item.desc}</p>
+                    </div>
+                    <a href="#consultation" className="case-arrow-btn" onClick={(e) => { e.preventDefault(); onOpenConsult(); }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7M17 7H9M17 7V15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </a>
                   </div>
-                  <div className="case-info">
-                    <h4 className="case-client">CIRKLE — производитель косметической продукции</h4>
-                    <p className="case-desc">Как в результате защиты мы зарегистрировали бренд российской косметики при наличии оснований для отказа.</p>
-                  </div>
-                  <a href="#consultation" className="case-arrow-btn" onClick={(e) => { e.preventDefault(); onOpenConsult(); }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 17L17 7M17 7H9M17 7V15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Case Card 2 */}
-                <div className="case-card" style={{ flex: `0 0 calc((100% - ${(getVisibleCasesCount() - 1) * 24}px) / ${getVisibleCasesCount()})` }}>
-                  <div className="case-logo-box bg-purple">
-                    <span className="case-logo-text">Camera IQ</span>
-                  </div>
-                  <div className="case-info">
-                    <h4 className="case-client">Camera IQ — производитель систем машинного зрения</h4>
-                    <p className="case-desc">Защита прав после ребрендинга. Как провести успешную регистрацию товарного знака в сжатые сроки.</p>
-                  </div>
-                  <a href="#consultation" className="case-arrow-btn" onClick={(e) => { e.preventDefault(); onOpenConsult(); }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 17L17 7M17 7H9M17 7V15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Case Card 3 */}
-                <div className="case-card" style={{ flex: `0 0 calc((100% - ${(getVisibleCasesCount() - 1) * 24}px) / ${getVisibleCasesCount()})` }}>
-                  <div className="case-logo-box bg-blue">
-                    <span className="case-logo-text">Hands</span>
-                  </div>
-                  <div className="case-info">
-                    <h4 className="case-client">Hands — строительная экосистема</h4>
-                    <p className="case-desc">Разработка патентной стратегии и комплексная защита интерфейсов мобильного приложения в Роспатенте.</p>
-                  </div>
-                  <a href="#consultation" className="case-arrow-btn" onClick={(e) => { e.preventDefault(); onOpenConsult(); }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 17L17 7M17 7H9M17 7V15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Case Card 4 */}
-                <div className="case-card" style={{ flex: `0 0 calc((100% - ${(getVisibleCasesCount() - 1) * 24}px) / ${getVisibleCasesCount()})` }}>
-                  <div className="case-logo-box bg-green">
-                    <span className="case-logo-text">FishPro</span>
-                  </div>
-                  <div className="case-info">
-                    <h4 className="case-client">FishPro — рыболовные принадлежности</h4>
-                    <p className="case-desc">Пресечение продажи контрафактной продукции на маркетплейсах через защиту авторских прав на фотографии и промдизайн.</p>
-                  </div>
-                  <a href="#consultation" className="case-arrow-btn" onClick={(e) => { e.preventDefault(); onOpenConsult(); }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 17L17 7M17 7H9M17 7V15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
+                ))}
               </div>
             </div>
 

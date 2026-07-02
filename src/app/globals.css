@@ -2685,6 +2685,75 @@ button {
         padding-right: 18px;
     }
 
+    .hero-section {
+        min-height: auto;
+        padding: 112px 0 48px;
+    }
+
+    .stats-section,
+    .partners-section,
+    .quiz-section,
+    .cases-section,
+    .team-section,
+    .forum-section,
+    .consultation-section,
+    .why-needed-section,
+    .process-section,
+    .related-services-section,
+    .orange-cta-section {
+        padding: 56px 0;
+    }
+
+    .service-hero-section,
+    .portfolio-header-section {
+        padding: 112px 0 32px;
+    }
+
+    .portfolio-grid-section,
+    .faq-grid-section {
+        padding: 24px 0 56px;
+    }
+
+    .footer {
+        padding-top: 48px;
+    }
+
+    .section-title {
+        margin-bottom: 10px;
+    }
+
+    .section-desc {
+        margin-bottom: 24px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .hero-title {
+        margin-bottom: 16px;
+    }
+
+    .hero-desc {
+        margin-bottom: 24px;
+        font-size: 15px;
+    }
+
+    .hero-actions-row {
+        gap: 12px;
+    }
+
+    .hero-glass-stats {
+        margin-top: 24px;
+        gap: 10px;
+    }
+
+    .mini-glass-card {
+        padding: 12px 14px;
+    }
+
+    .card-val {
+        font-size: 20px;
+    }
+
     .header-container {
         padding-left: 18px;
         padding-right: 18px;
@@ -2707,16 +2776,12 @@ button {
         padding: 92px 24px 36px;
     }
 
-    .services-section {
-        padding: 72px 0;
-    }
-
     .services-header,
     .cases-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 18px;
-        margin-bottom: 28px;
+        gap: 14px;
+        margin-bottom: 22px;
     }
 
     .services-header-btn,
@@ -2738,12 +2803,12 @@ button {
     }
 
     .services-grid {
-        gap: 14px;
+        gap: 12px;
     }
 
     .service-card {
         min-height: auto;
-        padding: 22px;
+        padding: 18px;
         border-radius: 16px;
     }
 
@@ -2752,31 +2817,31 @@ button {
     }
 
     .service-icon-box {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 14px;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
     }
 
     .service-icon-box svg {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
     }
 
     .service-card-title {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.25;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 
     .service-card-desc {
         font-size: 13px;
         line-height: 1.45;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .service-card-arrow {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
     }
 
     .carousel-control.prev {
@@ -2803,7 +2868,24 @@ button {
     
     .case-card {
         flex: 0 0 100%;
-        padding: 28px;
+        padding: 22px;
+        min-height: 220px;
+        border-radius: 18px;
+    }
+
+    .case-logo-box,
+    .case-info {
+        margin-bottom: 16px;
+    }
+
+    .case-client {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .case-desc {
+        font-size: 13px;
+        line-height: 1.45;
     }
     
     .team-member-card {
@@ -2851,12 +2933,12 @@ button {
     }
     
     .case-card-content {
-        padding: 30px;
+        padding: 22px;
     }
     
     .case-arrow-btn {
-        top: 30px;
-        right: 30px;
+        top: 22px;
+        right: 22px;
     }
     
     .search-input-wrapper input {
@@ -2881,17 +2963,40 @@ button {
     }
 
     .hero-title {
-        font-size: 40px;
+        font-size: 34px;
     }
     
     .section-title {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .services-header .section-desc,
     .cases-header .section-desc {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.5;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .btn-secondary {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .stat-card {
+        padding-bottom: 16px;
+    }
+
+    .stat-num {
+        font-size: 36px;
+    }
+
+    .partner-logo {
+        min-height: 68px;
+        padding: 16px;
     }
     
     .services-grid {
