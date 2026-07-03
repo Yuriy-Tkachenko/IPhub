@@ -355,7 +355,7 @@ export default function Home({ onOpenConsult }) {
                 <span>РЕЕСТР ПО РФ</span>
               </div>
 
-              <img src="assets/hero_chrome_twist.png" alt="Abstract metallic Chrome structure" className="chrome-3d-image animated-float" />
+              <img src="/projects/iphub/assets/hero_chrome_twist.webp" alt="Abstract metallic Chrome structure" className="chrome-3d-image animated-float" />
               <div className="glow-orb"></div>
             </div>
           </div>
@@ -366,7 +366,7 @@ export default function Home({ onOpenConsult }) {
       <section className="stats-section" id="stats">
         <div className="container stats-container">
           <div className="stats-visual">
-            <img src="assets/stats_chrome_sculpture.png" alt="Abstract chrome sculpture" className="chrome-3d-image-small animated-float-slow" />
+            <img src="/projects/iphub/assets/stats_chrome_sculpture.webp" alt="Abstract chrome sculpture" className="chrome-3d-image-small animated-float-slow" />
           </div>
           <div className="stats-content">
             <h2 className="section-title">Многолетний опыт</h2>
@@ -762,7 +762,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 1 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_lidia.png" alt="Раймм Лидия Вячеславовна" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_lidia.webp" alt="Раймм Лидия Вячеславовна" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Раймм Лидия Вячеславовна</h4>
                   <p className="member-role">Генеральный директор</p>
@@ -771,7 +771,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 2 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_gennady.png" alt="Золотов Геннадий Борисович" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_gennady.webp" alt="Золотов Геннадий Борисович" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Золотов Геннадий Борисович</h4>
                   <p className="member-role">Руководитель отдела делопроизводства</p>
@@ -780,7 +780,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 3 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_ekaterina.png" alt="Осоргина Екатерина Александровна" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_ekaterina.webp" alt="Осоргина Екатерина Александровна" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Осоргина Екатерина Александровна</h4>
                   <p className="member-role">Патентный поверенный РФ</p>
@@ -789,7 +789,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 4 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_yulia.png" alt="Рачеева Юлия Геннадьевна" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_yulia.webp" alt="Рачеева Юлия Геннадьевна" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Рачеева Юлия Геннадьевна</h4>
                   <p className="member-role">Патентный поверенный РФ</p>
@@ -798,7 +798,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 5 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_alina.png" alt="Пахоменко Алина Аликовна" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_alina.webp" alt="Пахоменко Алина Аликовна" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Пахоменко Алина Аликовна</h4>
                   <p className="member-role">Адвокат</p>
@@ -807,7 +807,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 6 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_alexandr.png" alt="Смирнов Александр Игоревич" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_alexandr.webp" alt="Смирнов Александр Игоревич" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Смирнов Александр Игоревич</h4>
                   <p className="member-role">Ведущий эксперт по IT-решениям</p>
@@ -816,7 +816,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 7 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_maria.png" alt="Ковалева Мария Сергеевна" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_maria.webp" alt="Ковалева Мария Сергеевна" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Ковалева Мария Сергеевна</h4>
                   <p className="member-role">Специалист по международному праву</p>
@@ -825,7 +825,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Member 8 */}
                 <div className="team-member-card" style={{ flex: `0 0 calc((100% - ${(getVisibleTeamCount() - 1) * 24}px) / ${getVisibleTeamCount()})` }}>
                   <div className="member-photo-box">
-                    <img src="assets/team_dmitry.png" alt="Морозов Дмитрий Владимирович" className="member-photo" loading="lazy" />
+                    <img src="/projects/iphub/assets/team_dmitry.webp" alt="Морозов Дмитрий Владимирович" className="member-photo" loading="lazy" />
                   </div>
                   <h4 className="member-name">Морозов Дмитрий Владимирович</h4>
                   <p className="member-role">Судебный адвокат по авторским правам</p>
@@ -859,7 +859,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Event Item 1 */}
                 <div className="forum-event-item">
                   <div className="forum-expert-info">
-                    <img src="assets/team_lidia.png" alt="Раймм Лидия" className="forum-expert-img" />
+                    <img src="/projects/iphub/assets/team_lidia.webp" alt="Раймм Лидия" className="forum-expert-img" />
                     <div>
                       <h4 className="forum-expert-name">Раймм Лидия Вячеславовна</h4>
                       <p className="forum-expert-role">Генеральный директор IPhub</p>
@@ -878,7 +878,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Event Item 2 */}
                 <div className="forum-event-item">
                   <div className="forum-expert-info">
-                    <img src="assets/team_gennady.png" alt="Золотов Геннадий" className="forum-expert-img" />
+                    <img src="/projects/iphub/assets/team_gennady.webp" alt="Золотов Геннадий" className="forum-expert-img" />
                     <div>
                       <h4 className="forum-expert-name">Золотов Геннадий Борисович</h4>
                       <p className="forum-expert-role">Руководитель отдела делопроизводства</p>
@@ -899,7 +899,7 @@ export default function Home({ onOpenConsult }) {
                 {/* Past Event 1 */}
                 <div className="forum-event-item">
                   <div className="forum-expert-info">
-                    <img src="assets/team_gennady.png" alt="Золотов Геннадий" className="forum-expert-img" />
+                    <img src="/projects/iphub/assets/team_gennady.webp" alt="Золотов Геннадий" className="forum-expert-img" />
                     <div>
                       <h4 className="forum-expert-name">Золотов Геннадий Борисович</h4>
                       <p className="forum-expert-role">Руководитель отдела делопроизводства</p>
@@ -986,7 +986,7 @@ export default function Home({ onOpenConsult }) {
           </div>
 
           <div className="consultation-visual">
-            <img src="assets/cta_chrome_shell.png" alt="Abstract chrome fan" className="chrome-3d-image animated-float" />
+            <img src="/projects/iphub/assets/cta_chrome_shell.webp" alt="Abstract chrome fan" className="chrome-3d-image animated-float" />
           </div>
         </div>
       </section>

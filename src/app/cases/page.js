@@ -116,7 +116,7 @@ export default function Cases({ onOpenConsult }) {
           <div className="portfolio-title-row">
             <h1 className="portfolio-main-title">Все кейсы</h1>
             <div className="portfolio-header-illustration">
-              <img src="assets/cta_chrome_shell.png" alt="Abstract chrome sculpture" className="portfolio-header-img animated-float-slow" />
+              <img src="/projects/iphub/assets/cta_chrome_shell.webp" alt="Abstract chrome sculpture" className="portfolio-header-img animated-float-slow" />
             </div>
           </div>
 
@@ -227,7 +227,7 @@ export default function Cases({ onOpenConsult }) {
                 <line x1="30" y1="30" x2="230" y2="230" stroke="rgba(255,255,255,0.15)"/>
                 <line x1="230" y1="30" x2="30" y2="230" stroke="rgba(255,255,255,0.15)"/>
               </svg>
-              <img src="assets/cta_orange_overlay.png" alt="Abstract metallic Chrome structure" className="composite-chrome animated-float" />
+              <img src="/projects/iphub/assets/cta_orange_overlay.webp" alt="Abstract metallic Chrome structure" className="composite-chrome animated-float" />
             </div>
           </div>
         </div>

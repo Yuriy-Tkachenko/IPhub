@@ -264,7 +264,7 @@ export default function Trademark({ onOpenConsult }) {
                 <line x1="30" y1="30" x2="230" y2="230" stroke="rgba(255,255,255,0.15)"/>
                 <line x1="230" y1="30" x2="30" y2="230" stroke="rgba(255,255,255,0.15)"/>
               </svg>
-              <img src="assets/cta_orange_overlay.png" alt="Abstract metallic Chrome structure" className="composite-chrome animated-float" />
+              <img src="/projects/iphub/assets/cta_orange_overlay.webp" alt="Abstract metallic Chrome structure" className="composite-chrome animated-float" />
             </div>
           </div>
         </div>
